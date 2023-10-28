@@ -1,6 +1,6 @@
 :root{
-    --base: rgb(16, 75, 112);
-    --accentcolor:rgb(101, 168, 168); 
+    --base: rgb(214, 134, 42);
+    --accentcolor:rgb(52, 183, 243); 
 }
 
 body {
@@ -62,33 +62,29 @@ nav a {
     height: 200px;
 }
 
-.section h1 {
-    font-size: 300%;
-    text-align: left;
-    color: var(--base);
-    display: inline-block;
-    margin-left: 60px;
-    flex-direction: row;
+.overlay-text {
+    position: absolute;
+    top:50%
 }
 
-.verticalline{
-    border-left: thick solid  rgb(16, 75, 112);
-    float: left;
-    margin-left: 25%;
-    display: inline-flex;
+#about {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px
 }
 
-p {
-    text-align: left;
-    padding: 0 50px;
-    margin-left: 40px;
+#about h2, #work h2, #contact h2 {
+    flex: 1;
+    padding-right: 50px;
+    font-size:50px;
+    margin-right: 2px;
+    padding-right: 10px;
+    border-right: 5px solid var(--base);
 }
 
-.section-container {
-    display: inline-block;
-}
-
-.section {
-    padding: 0 20px;
-    display: block;
+#about p {
+    felx:3;
+    margin: 0;
+    padding-left: 50px;
 }
