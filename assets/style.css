@@ -1,90 +1,170 @@
 :root{
     --base: rgb(214, 134, 42);
-    --accentcolor:rgb(52, 183, 243); 
+    --accentcolor:rgb(52, 183, 243);
+    --worktextcolor:  rgb(223, 44, 12);
 }
 
 body {
-    display: inline-block;
-    flex-direction: row;
-    line-height: 1.3;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 mark {
     background-color: var(--accentcolor);
     color: var(--base);
     padding: 10px 50px;
-
 }
 
-header, .header h1 {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(62, 70, 75);
-    color: var(--accentcolor);
-    font-size: larger;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 50px;
 }
 
 nav ul {
     display: flex;
-    justify-content: space-around;
-    min-width: auto;
     list-style: none;
-    font-size: small;
+    margin: 0;
+    padding: 0;
 }
 
 nav li {
-    font-size: 200%;
+    margin: 0 20px;
 }
 
 nav a {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--accentcolor);
     font-weight: bold;
     padding: 0 10px 0 10px;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--base);
 }
 
 .subtitle {
     position: relative;
+    height: 300px;
+    overflow: hidden;
 }
 
-.subtitle h2{
+.subtitle h2 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    margin: 0;
     color: var(--base);
-    text-align: right;
-    padding: 0 80px;
-    bottom: 8px;
-    right: 16px;
+    font-size: 25px;
 }
 
 .background {
     width: 100%;
-    height: 200px;
+    height: auto;
+    display: block;
 }
 
-.overlay-text {
-    position: absolute;
-    top:50%
+.work-content{
+    display: inline-flex;
 }
 
-#about {
-    display: flex;
-    align-items: center;
+#about, #Contact-Me {
+    display: inline-flex;
+    align-items: start;
     margin-bottom: 30px;
-    padding: 20px
+    padding: 20px;
+    color: var(--accentcolor);
 }
 
-#about h2, #work h2, #contact h2 {
-    flex: 1;
-    padding-right: 50px;
-    font-size:50px;
-    margin-right: 2px;
-    padding-right: 10px;
-    border-right: 5px solid var(--base);
-}
-
-#about p {
-    felx:3;
-    margin: 0;
+#about h2, .work-content h2, #Contact-Me h2 {
+    font-size: 30px;
+    margin: 20px 0px;
+    color: var(--base);
+    font-size: 40px;
+    padding-right: 50px ;
+    border-right: 3px solid var(--accentcolor);
+    margin-right: 50px;
     padding-left: 50px;
+    display: inline-flex;
+}
+
+#about p, #Contact-Me p{
+    color: black;
+}
+
+/* .workheadercontainer {
+    display:grid;
+    justify-content: flex-start;
+    align-items: start;
+    width: 100%; 
+} */
+
+.work-box {
+    /* margin-bottom: -50px; */
+    position: relative;
+}
+
+.work-box img {
+    max-width: 100%;
+    display: inline-flex;
+    position: relative;
+    /* align-items: start; */
+    
+}
+
+.work-box .description h2 {
+    position: relative;
+    bottom: 250px;
+    background-color: var(--base);
+    padding: 10px 10px 10px 50px;
+    color: white;
+    font-size: 35px;
+}
+
+.smallboxes {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.small-box {
+    flex: 1;
+    position: relative;
+}
+
+.small-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.small-box .box-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    /* background-color: rgba(223, 44, 12, 0.5); */
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.small-box .box-text h2 {
+    font-size: 35px;
+    margin: 0 0 5px 0;
+}
+
+.small-box .box-text p {
+    font-size: 20px;
+    margin: 0;
 }
