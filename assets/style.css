@@ -27,7 +27,7 @@ header {
 header h1 {
     margin: 0;
     color: white;
-    font-size: 50px;
+    font-size: 250%;
 }
 
 nav ul {
@@ -65,7 +65,7 @@ nav a:hover {
     right: 20px;
     margin: 0;
     color: var(--base);
-    font-size: 25px;
+    font-size: auto;
 }
 
 .background {
@@ -87,28 +87,28 @@ nav a:hover {
 }
 
 #about h1, .work-content h1, #Contact-Me h1 {
-    font-size: 30px;
     margin: 20px 0px;
     color: var(--base);
-    font-size: 40px;
     padding-right: 50px ;
     border-right: 3px solid var(--accentcolor);
     margin-right: 50px;
     padding-left: 50px;
     display: inline-flex;
+    font-size: 200%;
 }
 
 #about p, #Contact-Me p{
     color: black;
 }
 
-.work-box img::before{
-
-}
 .work-box img {
     max-width: 100%;
     display: inline-flex;
     position: relative;   
+}
+
+.description{
+    display: none;
 }
 
 .description h2 {
@@ -120,7 +120,7 @@ nav a:hover {
     font-size: 35px;
     width: 200px;
 }
- 
+
 .smallboxes {
     display: flex;
     gap: 20px;
@@ -131,6 +131,28 @@ nav a:hover {
 .small-box {
     flex: 1;
     position: relative;
+    color: blue;
+}
+
+.small-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(52, 183, 243, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.small-box:hover::before {
+    opacity: 1;
+}
+
+.small-box:hover {
+    transform: scale(1.2);
+    z-index: 2;
 }
 
 .small-box img {
@@ -151,45 +173,45 @@ nav a:hover {
 }
 
 .small-box .box-text h2 {
-    font-size: 35px;
+    font-size: auto;
     margin: 0 0 5px 0;
 }
 
 .small-box .box-text p {
     font-size: 20px;
     margin: 0;
+    color: grey;
 }
 
-.contact-section {
-    display: inline;
-    vertical-align: top;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    line-height: 28px;
+.box-title{
+    color: white;
 }
 
 #Contact-Me {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     color: var(--accentcolor);
-    font-size: 30px;
+    font-size: auto;
     text-align: left;
     padding-right: 20px;
     margin-right: 20px;
+    overflow:hidden;
 }
 
 .contact-info {
-    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 0;
-    font-size: 20px;
-    margin-left: 20px; 
+    font-size: auto;
+    display: flex;
+    /* margin-left: 20px;  */
 }
 
 
 .contact-info p {
     margin: 0;
     padding: 0;
+    flex: 1;
 }
 
 .contact-info p:not(:last-child) {
@@ -200,4 +222,10 @@ nav a:hover {
     text-decoration: underline;
     color: var(--accentcolor);
     font-weight: bold;
+}
+
+.contact-info p a:hover{
+    transform: scale(1.1);
+    flex: 2;
+    color: var(--worktextcolor);
 }
